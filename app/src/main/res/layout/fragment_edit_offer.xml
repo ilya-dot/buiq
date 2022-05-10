@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.bf_kotlin_client.viewmodels.EditOfferViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/background_color"
+        android:backgroundTint="@color/background_color"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Изменить запрос"
+            android:textAlignment="textStart"
+            android:textColor="@color/text_or_icon_color"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/round_shape"
+            android:backgroundTint="@color/main_color"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="sans-serif"
+                    android:text="Запрос"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_or_icon_color"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/editTextLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="Название"
+                    android:inputType="textPersonName"
+                    android:text="@={viewModel.productName}"
+                    android:textColor="@color/text_or_icon_color" />
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="Описание"
+                    android:text="@={viewModel.essence}"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/text_or_icon_color" />
+
+                <EditText
+                    android:id="@+id/editTextNomber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:hint="Цена"
+                    android:text="@={viewModel.price}"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/text_or_icon_color" />
+
+                <Button
+                    android:id="@+id/buttonNext2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="0"
+                    android:backgroundTint="@color/text_or_icon_color"
+                    android:fontFamily="@font/roboto_medium"
+                    android:onClick="@{_->viewModel.openResponsesFragment()}"
+                    android:text="Посмотреть отклики"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:checked="@{viewModel.isOpen}"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Открыт/Закрыт"
+                    android:textColor="@color/text_or_icon_color"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/text_or_icon_color"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Сохранить"
+                    android:onClick="@{_->viewModel.update()}"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/buttonNext3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/text_or_icon_color"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Удалить"
+                    android:textColor="@color/white"
+                    android:onClick="@{_->viewModel.delete()}"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</layout>
