@@ -25,7 +25,7 @@ class EditOfferViewModel {
     fun update() {
         var newOffer = Offer(offer.id, productName.get().toString(), essence.get().toString(),
             ((price.get().toString().toDouble()) * 100).toInt(), isOpen.get()!!, offer.buyerId)
-        offersApiWorker.update(newOffer
+        offersApiWorker.updateBuyers(newOffer
         ) {
             if (it.equals("OK")) {
                 offer=newOffer
