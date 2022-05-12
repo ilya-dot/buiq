@@ -13,4 +13,5 @@ class Offer (
         set(value) {
             totalPrice = (value * 100).toInt()
         }
+    fun getPriceString()=price.toString()
 }

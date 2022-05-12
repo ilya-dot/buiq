@@ -9,115 +9,88 @@
             type="com.example.bf_kotlin_client.viewmodels.CreateOfferViewModel" />
     </data>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="@color/background_color"
-        android:backgroundTint="@color/background_color"
         android:layout_height="match_parent"
+        android:background="@color/background"
+        android:backgroundTint="@color/background"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:text="Создать запрос"
-            android:textAlignment="textStart"
-            android:textColor="@color/text_or_icon_color"
-            android:textSize="24sp" />
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="66dp"
+                android:layout_height="48dp"
+                android:background="@color/background"
+                app:srcCompat="@drawable/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Объявление"
+                android:textAlignment="center"
+                android:textColor="@color/text_images"
+                android:textSize="34sp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/round_shape"
-            android:backgroundTint="@color/main_color"
+            android:backgroundTint="@color/main"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:layout_weight=".50"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="Запрос"
-                    android:textAlignment="center"
-                    android:textColor="@color/text_or_icon_color"
-                    android:textSize="24sp" />
+                <LinearLayout
+                    android:layout_width="37dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.001"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/editTextLogin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:ems="10"
-                    android:fontFamily="@font/roboto_medium"
-                    android:hint="Название"
-                    android:text="@={viewModel.name}"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/text_or_icon_color" />
-
-                <EditText
-                    android:id="@+id/editTextPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:ems="10"
-                    android:fontFamily="@font/roboto_medium"
-                    android:hint="Описание"
-                    android:text="@={viewModel.description}"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/text_or_icon_color" />
-
-                <EditText
-                    android:id="@+id/editTextInfo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="20dp"
-                    android:ems="10"
-                    android:fontFamily="@font/roboto_medium"
-                    android:hint="Цена"
-                    android:text="@={viewModel.price}"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/text_or_icon_color" />
+                    <ImageButton
+                        android:id="@+id/imageButton6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/main"
+                        app:srcCompat="@drawable/add" />
+                </LinearLayout>
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight=".50" >
 
-                <Button
-                    android:id="@+id/buttonNext"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="125dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/text_or_icon_color"
-                    android:fontFamily="@font/roboto_medium"
-                    android:onClick="@{_->viewModel.create()}"
-                    android:text="Создать"
-                    android:textColor="@color/white" />
+            </androidx.recyclerview.widget.RecyclerView>
 
-            </LinearLayout>
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/main"
+                android:foregroundGravity="center"
+                app:srcCompat="@drawable/done" />
+
         </LinearLayout>
+
     </LinearLayout>
+
+
 
 
 </layout>

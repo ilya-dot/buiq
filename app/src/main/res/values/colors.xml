@@ -12,4 +12,9 @@
     <color name="main_color">#C9D6DF</color>
     <color name="text_or_icon_color">#52616B</color>
     <color name="bumped_icon_color">#1E2022</color>
+
+    <color name="text_images">#FADB33</color>
+    <color name="background">#313030</color>
+    <color name="main">#242424</color>
+
 </resources>
